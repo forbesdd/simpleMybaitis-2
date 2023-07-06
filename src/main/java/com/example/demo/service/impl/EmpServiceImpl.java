@@ -65,15 +65,15 @@ public class EmpServiceImpl implements EmpService {
 
     @Override
     public PageBean page(Integer page, Integer pageSize,String name, Short gender, LocalDate begin, LocalDate end) {
-        //1. 设置分页参数
+
         PageHelper.startPage(page,pageSize);
 
-        //2. 执行查询
+
         List<Emp> empList = empMapper.list(name, gender, begin, end);
         @SuppressWarnings("resource")
 		Page<Emp> p = (Page<Emp>) empList;
 
-        //3. 封装PageBean对象
+
         PageBean pageBean = new PageBean(p.getTotal(), p.getResult());
         return pageBean;
     }
@@ -86,9 +86,9 @@ public class EmpServiceImpl implements EmpService {
 
 	@Override
 	public void save(Emp emp) {
-		//补全数据
+
 		emp.setCreateTime(LocalDateTime.now());
-		emp.setUpdateTime(LocalDateTime.now()); //调用添加方法
+		emp.setUpdateTime(LocalDateTime.now());
 		empMapper.insert(emp);
 
 	}

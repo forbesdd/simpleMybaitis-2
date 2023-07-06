@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Select;
 import com.example.demo.pojo.Dept;
 
 /**
- * 部门管理
+ * 部門管理
  */
 @Mapper
 public interface DeptMapper {

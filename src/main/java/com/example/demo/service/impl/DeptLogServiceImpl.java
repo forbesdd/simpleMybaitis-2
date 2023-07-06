@@ -12,7 +12,7 @@ public class DeptLogServiceImpl implements DeptLogService {
     @Autowired
     private DeptLogMapper deptLogMapper;
 
-    @Transactional(propagation = Propagation.REQUIRES_NEW) //事务传播行为:有事务就加入、没有事务就新建事务
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     @Override
     public void insert(DeptLog deptLog) {
         deptLogMapper.insert(deptLog);

@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * 员工实体类
+ * 授業員entity
  */
 @Data
 @NoArgsConstructor

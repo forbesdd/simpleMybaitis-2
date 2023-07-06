@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.Map;
-
+//ログイン管理Cotroller
 @Slf4j
 @RestController
 public class LoginController {
@@ -36,7 +36,7 @@ public class LoginController {
         }
 
 //        登录失败, 返回错误信息
-        return Result.error("用户名或密码错误");
+        return Result.error("IDとPASSWORDが間違いました！");
        // return e != null ? Result.success() : Result.error("えらです");
 
 

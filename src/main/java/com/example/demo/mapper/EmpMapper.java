@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * 员工管理
+ * 授業員管理
  */
 @Mapper
 public interface EmpMapper {

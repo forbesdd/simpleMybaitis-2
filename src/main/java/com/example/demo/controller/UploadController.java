@@ -13,6 +13,9 @@ import com.example.demo.pojo.Result;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * アップロードController
+ */
 @Slf4j
 @RestController
 @RequestMapping("/upload")
@@ -27,7 +30,7 @@ public class UploadController {
 		int index = orignalFilename.lastIndexOf(".");
         String extname = orignalFilename.substring(index);
         String newFileName = UUID.randomUUID().toString() + extname;
-        log.info("新的文件名: {}", newFileName);
+        log.info("ファイル名: {}", newFileName);
 		
 		image.transferTo(new File("/Users/user/IT/image/" + newFileName));
 		return Result.success();

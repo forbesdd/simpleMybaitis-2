@@ -23,7 +23,7 @@ import com.example.demo.service.EmpService;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 员工管理Controller
+ * 従業員管理Controller
  */
 @Slf4j
 @RestController

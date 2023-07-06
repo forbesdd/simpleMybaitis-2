@@ -5,7 +5,7 @@ import com.example.demo.pojo.Dept;
 import java.util.List;
 
 /**
- * 部门管理
+ * 部門管理
  */
 public interface DeptService {
 	
