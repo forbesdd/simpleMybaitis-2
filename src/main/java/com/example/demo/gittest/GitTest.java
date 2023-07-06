@@ -6,4 +6,6 @@ package com.example.demo.gittest;
  * @Description:com.example.demo.gittest Version:1.0
  */
 public class GitTest {
+    private int age;
+    private  String name;
 }
