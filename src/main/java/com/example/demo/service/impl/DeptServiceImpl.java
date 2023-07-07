@@ -34,7 +34,6 @@ public class DeptServiceImpl implements DeptService {
 
 
 //    @Log
-    //根据部门id，删除部门信息及部门下的所有员工
 
     @Override
     @Transactional(rollbackFor = Exception.class)
@@ -49,7 +48,7 @@ public class DeptServiceImpl implements DeptService {
 
             DeptLog deptLog = new DeptLog();
             deptLog.setCreateTime(LocalDateTime.now());
-            deptLog.setDescription("" + id + " ");
+            deptLog.setDescription("部門IDによる削除" + id );
             deptLogService.insert(deptLog);
         }
     }
