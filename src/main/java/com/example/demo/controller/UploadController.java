@@ -32,9 +32,8 @@ public class UploadController {
         String newFileName = UUID.randomUUID().toString() + extname;
 
         log.info("ファイル名: {}", newFileName);
-=======
         log.info("新しいファイル名: {}", newFileName);
->>>>>>> master
+
 		
 		image.transferTo(new File("/Users/user/IT/image/" + newFileName));
 		return Result.success();
