@@ -30,7 +30,7 @@ public class UploadController {
 		int index = orignalFilename.lastIndexOf(".");
         String extname = orignalFilename.substring(index);
         String newFileName = UUID.randomUUID().toString() + extname;
-<<<<<<< HEAD
+
         log.info("ファイル名: {}", newFileName);
 =======
         log.info("新しいファイル名: {}", newFileName);

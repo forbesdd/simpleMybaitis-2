@@ -35,14 +35,12 @@ public class LoginController {
             return Result.success(jwt);
         }
 
-//        登录失败, 返回错误信息
-<<<<<<< HEAD
+
+
         return Result.error("IDとPASSWORDが間違いました！");
-       // return e != null ? Result.success() : Result.error("えらです");
-=======
-        return Result.error("用户名或密码错误");
+//        return e != null ? Result.success() : Result.error("えらです");
+//        return Result.error("用户名或密码错误");
        // return e != null ? Result.success() : Result.error("エラーです");
->>>>>>> master
 
 
     }
