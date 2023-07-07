@@ -23,7 +23,7 @@ import com.example.demo.service.EmpService;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 员工管理Controller
+ * 従業員管理Controller
  */
 @Slf4j
 @RestController
@@ -35,7 +35,7 @@ public class EmpController {
 	private EmpService empService;
 
 
-	//条件分页查询
+	//ページ検索
 
     @GetMapping
     public Result page(@RequestParam(defaultValue = "1") Integer page,
@@ -43,12 +43,14 @@ public class EmpController {
                        String name, Short gender,
                        @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate begin,
                        @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate end){
-        log.info("分页查询, 参数: {},{},{},{},{},{}",page,pageSize,name,gender,begin,end);
-        //调用service分页查询
+        log.info("ページ検索変数: {},{},{},{},{},{}",page,pageSize,name,gender,begin,end);
+        //serviceによる検索
         PageBean pageBean = empService.page(page,pageSize,name,gender,begin,end);
         return Result.success(pageBean);
     }
-	
+
+
+	//削除
 	@DeleteMapping("/{ids}")
 	public Result delete(@PathVariable List<Integer> ids) {
 		log.info("削除選択:{}", ids);
@@ -56,13 +58,12 @@ public class EmpController {
 		return Result.success();
 	}
 
-	//新 增
+	//追加
 	@PostMapping
 	public Result save(@RequestBody Emp emp) {
-		//记录日志
-		log.info("新增员工, emp:{}", emp); //调用业务层新增功能 
+		//日報
+		log.info("新增员工, emp:{}", emp); //
 		empService.save(emp);
-		//响 应
 		return Result.success();
 	}
 	@GetMapping("/{id}")

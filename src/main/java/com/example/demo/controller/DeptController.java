@@ -26,7 +26,7 @@ public class DeptController {
 	
 	@GetMapping
 	public Result list() {
-		log.info("全部の部門でーた");
+		log.info("全部の部門");
 	
 		
 	  List<Dept>  deptList =	deptService.list();

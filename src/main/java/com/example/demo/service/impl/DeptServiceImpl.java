@@ -34,22 +34,21 @@ public class DeptServiceImpl implements DeptService {
 
 
 //    @Log
-    //根据部门id，删除部门信息及部门下的所有员工
 
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void delete(Integer id) throws Exception {
         try {
-//根据部门id删除部门信息
-            deptMapper.deleteById(id); //模拟:异常
 
-//删除部门下的所有员工信息
+            deptMapper.deleteById(id);
+
+
             empMapper.deleteByDeptId(id);
         } finally {
-//不论是否有异常，最终都要执行的代码:记录日志
+
             DeptLog deptLog = new DeptLog();
             deptLog.setCreateTime(LocalDateTime.now());
-            deptLog.setDescription("执行了解散部门的操作，此时解散的 是" + id + " 号部门"); //调用其他业务类中的方法
+            deptLog.setDescription("部門IDによる削除" + id );
             deptLogService.insert(deptLog);
         }
     }
